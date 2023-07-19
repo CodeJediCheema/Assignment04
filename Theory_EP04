@@ -1,0 +1,82 @@
+#Q1)- Is JSX mandatory for React?
+NO, Jsx is not imperative for react because we can write the code with the help of core react, for example, using createReact method. However, it will be very difficult 
+to write because the syntax is very complex to follow and it becomes difficult to visualize the structure, if we are writing nested structures. It is therefore a good
+practice to write our code using Jsx.
+
+#Q2)- Is ES6 mandatory for React?
+NO, ES6(ECMAScript 6) is not mandatory for React, however, it is a good practice to use it because it offers multifarious features such as arrow function, classes,
+template literals, destructureing, modules which not only ensures better code organisation, but also enhanse productivity and code readability.
+
+#Q3)- {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} ?
+In Jsx there are 3 different ways to render a react component.
+a) {TitleComponent}- by using this it will not be rendered as a Component, but as an element/variable or as a functional reference.
+b)- {<TitleComponent/>} -  by using this it will be renderd as a React Component. It is commonly used when we want to include any children between our component.
+c)- {<TitleComponent></TitleComponent>} - It works same as above, i.e., it will be rendered as a React Component. And it is used when we want to include nested 
+content/ children inside our component. For eg. {<TitleComponent>
+                                                  Hello world!
+                                                 </TitleComponent>};
+
+
+#Q4)- How to write comments in Jsx?
+By using JavaScript style comment syntax. Either by {/*  --------  */}, or using //--------
+
+#Q5)- Whst is <React.Fragment></React.Fragment> and <></>?
+As we know that Jsx can have only one parent root, when we want to have more than 1 element, tag at the root level. there are 2 ways to do so.
+a)- By wrappind both of them inside a new tag so that they both become the children of that tag. However, by doing so, we introduced a new element/tag inside our dom tree 
+and it doesnt looks good and cluttered space. therefore 2nd option is preferred.
+b)- By using React.Fragment. in this we can wrap the children elements/tags inside this, and the beauty is that it acts as an empty tag. it is not visible in our dom. and 
+the coding space looks alot better.
+<></> this is a cooler version of <React.Fragment></React.Fragment> both of them works the same way.
+
+
+#Q6)- What is virtual DOM?
+Virtual DOM is a technique used in library to to efficiently update the user interface and improve performance.
+It acts as an abstract layer between actual DOM and UI  component.It is a lightweight copy of the real Dom that is stored in memory and reflects the curret stage of UI.
+WHY IS IT USED??
+It is used to minimise the direct interaction with the real DOM. Instead of updating real DOM for every small change, virtual DOM allows to batch multiple changes together
+and update the real DOM in a more efficient way.
+
+#Q7)- Reconciliation / diffing?
+In this the latest virtual dom compares the changes made to it with the previous virtual dom, and it only updated those selected parts rather than rendering the whole UI. 
+This ensures efficient updates, smoother rendering and better user experience.
+
+#Q8)- What is React Fiber?
+It is an internal reimplementation of the react reconciliation algorithm.It is a set of data structure and algorithm that optimize the rendering and updating process of react 
+components.
+Whereas in the past,(without react fiber) reconciliation process follows depth first traversalof the component tree, which is time consuming and block the main thread.
+If there are multiple tasks, UI freeze for a moment, resulting in bad user experience
+
+Nowadays(with react fiber), React fiber breaks down the rendering work to s smaller units called fiber, and it uses priority base scheduling algorithm to manage these units.
+This means React can interrupt and resume rendering to prioritize higher-priority tasks.
+Improves overall experience of user by making UI more responsive.
+
+
+
+#Q9)- Why we need keys in React? When do we need keys in React?
+Keys are important in react because when we are looping over components, then if they do not have a unique key, first, there will be a warning in our console. Second, when any 
+new component is added to the existing structure, react will not know which new element is added, and to make changes, it will render the full page, which is a very expensive
+thing. Therefore to solve these kinds of warning, and to improve the speed and efficiency of our app, we must provide it with a unique key. 
+If it  will have a unique id, then react will exactly know which is the new element added, and it will make changes at that exact point only.
+
+#Q10)- Can we use index as a key in react?
+It should be our last resort. Official react documentation itself quote that we should not use indexes as 1) it can cause problems whenever a list is modified 2) items 
+are reordered 3) new items are added or removed.
+However it looks logically right but we should avoid it. 
+If ther occour a situation where there is nothing uniques in the data, 
+then first ask the backend to add a unique id
+if not
+then it is better to use index as keys rather than no key at all.
+
+
+#Q11)- What is props in react?
+Props( properties) are a way of making our data dynamic. It looks similar like passing arguments to a funtion and performs the same task.
+
+
+#Q12)- What is config driven UI?
+Config driven User Interface means that the structure and behaviour of the UI component inside the code behaves according to the data.
+suppose, swiggy shows some offers in  my city , i.e jalandhar, and these offers could be different in chandigarh or any other place, or there might be no offer available at 
+all. Then in that case, should we create a different site for each and every place???
+NOOO. Instead, we use config driven UI. The data which comes from backend will drive our UI.
+
+
+
